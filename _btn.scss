@@ -1,0 +1,79 @@
+@import "_variables.scss";
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 2rem 6rem;
+  margin: 2rem auto;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  border-radius: 10rem;
+  transition: all 0.3s;
+  position: relative;
+  color: #fff;
+}
+.btn-gray {
+  background-color: color(btn1);
+}
+.btn-blue {
+  background-color: color(btn2);
+}
+
+.btn-gray::after {
+  background-color: color(btn1);
+  color: #fff;
+}
+.btn-blue::after {
+  background-color: color(btn2);
+  color: #fff;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.2);
+}
+.btn-gray:hover {
+  box-shadow: 0 10px 0.5rem rgba(color(black), $alpha: 0.6);
+  background-color: color(btn1-alt);
+}
+.btn-blue:hover {
+  clip-path: polygon(
+    50% 0%,
+    80% 10%,
+    100% 35%,
+    100% 70%,
+    80% 90%,
+    50% 100%,
+    20% 90%,
+    0% 70%,
+    0% 35%,
+    20% 10%
+  );
+  background-color: color(btn2-alt);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.btn-gray:hover::after {
+  transform: scaleX(1.5) scaleY(1.6) skewY(2deg);
+  opacity: 0;
+}
+.btn-blue:hover::after {
+  transform: scaleX(1.5) scaleY(1.6) skewY(-2deg);
+  opacity: 0;
+}
+.btn:active {
+  transform: translateY(-1px);
+  transform: scaleX(0.8) scaleY(0.9);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}

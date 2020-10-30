@@ -1,0 +1,16 @@
+@import "_variables.scss";
+
+.blueprints {
+  background-image: url("media/blueprint.jpg");
+  background-position: center;
+  margin: 5rem;
+  color: transparent;
+  font-size: 8rem;
+  font-family: "Roboto", sans-serif;
+  -webkit-background-clip: text;
+  transition: all 0.3s;
+}
+.blueprints:hover {
+  transform: skewX(-10deg) scale(1.1);
+  outline: 1rem solid color(bordercolor);
+}
